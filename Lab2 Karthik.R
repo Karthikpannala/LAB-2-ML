@@ -2,10 +2,10 @@
 library(tidyverse)
 
 # Set working directory
-setwd("C:/Users/peddo/OneDrive/Desktop/Lab2/")
+setwd(""C:\Users\karth\OneDrive\Desktop\"")
 
 # Load student dataset using base R read.csv function
-students <- read.csv("Students.csv")
+students <- read.csv("Students lab2.csv")
 
 # Data preprocessing
 students <- students %>%
@@ -16,14 +16,6 @@ students <- students %>%
     imd_band = factor(imd_band, levels = c("0-10%", "10-20%", "20-30%", "30-40%", "40-50%", "50-60%", "60-70%", "70-80%", "80-90%", "90-100%")),
     imd_band = as.integer(imd_band)
   )
-
-# Preprocessing the data: convert "disability" into a factor and "final_result" into a binary variable
-#student_data$is_passed <- as.factor(ifelse(student_data$final_result == "Pass", 1, 0))
-#student_data$student_credits <- as.factor(student_data$studied_credits)
-
-# Make 'imd_band' into a numerical scale according to the provided categories.
-#imd_scale <- c("0-10%", "10-20%", "20-30%", "30-40%", "40-50%", "50-60%", "60-70%", "70-80%", "80-90%", "90-100%")
-#student_data$imd_numeric <- as.numeric(factor(student_data$imd_band, levels = imd_scale))
 
 # Creat training and test sets
 set.seed(20230712)  # Setting seed for reproducibility
